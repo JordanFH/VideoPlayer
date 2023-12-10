@@ -42,7 +42,15 @@ function Example() {
 
   return (
     <>
-      <MediaPlayer ref={player} src={sources[src]}>
+      <MediaPlayer
+        ref={player}
+        src={sources[src]}
+        playsinline
+        aspectRatio="16/9"
+        // title="Mi video"
+        // streamType="live"
+        // onContextMenu={(e) => e.preventDefault()}
+      >
         <MediaProvider>
           <Poster
             className="vds-poster"
