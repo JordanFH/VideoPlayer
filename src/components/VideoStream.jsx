@@ -15,7 +15,7 @@ import { useEffect, useRef, useState } from "react";
 function VideoStream() {
   let player = useRef(null);
 
-  const currentTime = useMediaState("currentTime", player);
+  const paused = useMediaState("paused", player);
 
   const [currentPlayerTime, setCurrentPlayerTime] = useState();
 
@@ -27,9 +27,6 @@ function VideoStream() {
     console.log(ended);
     if (ended) {
       setCurrentPlayerTime(0);
-      if (poster && !poster.hasAttribute("data-visible")) {
-        poster.setAttribute("data-visible", true);
-      }
     } else {
       setCurrentPlayerTime();
       if (poster && poster.hasAttribute("data-visible")) {
@@ -37,6 +34,18 @@ function VideoStream() {
       }
     }
   }, [ended]);
+
+  useEffect(() => {
+    if (paused && !ended) {
+      if (poster && !poster.hasAttribute("data-visible")) {
+        poster.setAttribute("data-visible", true);
+      }
+    } else {
+      if (poster && poster.hasAttribute("data-visible")) {
+        poster.removeAttribute("data-visible");
+      }
+    }
+  }, [paused]);
 
   return (
     <MediaPlayer
