@@ -1,9 +1,11 @@
-import VideoStream from './components/VideoStream'
+import Example from './components/Example'
+import VideoStream from "./components/VideoStream";
 
 function App() {
   return (
-    <VideoStream />
-  )
+    // <VideoStream />
+    <Example />
+  );
 }
 
-export default App
+export default App;
