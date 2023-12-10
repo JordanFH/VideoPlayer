@@ -36,7 +36,7 @@ function VideoStream() {
   }, [ended]);
 
   useEffect(() => {
-    if (paused && !ended) {
+    if (paused && currentPlayerTime === 0) {
       if (poster && !poster.hasAttribute("data-visible")) {
         poster.setAttribute("data-visible", true);
       }
