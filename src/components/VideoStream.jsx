@@ -29,9 +29,6 @@ function VideoStream() {
       setCurrentPlayerTime(0);
     } else {
       setCurrentPlayerTime();
-      if (poster && poster.hasAttribute("data-visible")) {
-        poster.removeAttribute("data-visible");
-      }
     }
   }, [ended]);
 
