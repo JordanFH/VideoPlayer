@@ -17,7 +17,7 @@ function VideoStream() {
 
   const currentTime = useMediaState("currentTime", player);
 
-  const [currentPlayerTime, setCurrentPlayerTime] = useState(currentTime);
+  const [currentPlayerTime, setCurrentPlayerTime] = useState();
 
   const ended = useMediaState("ended", player);
 
@@ -27,12 +27,12 @@ function VideoStream() {
     console.log(ended);
     if (ended) {
       setCurrentPlayerTime(0);
-      if (poster) {
+      if (poster && !poster.hasAttribute("data-visible")) {
         poster.setAttribute("data-visible", true);
       }
     } else {
       setCurrentPlayerTime();
-      if (poster) {
+      if (poster && poster.hasAttribute("data-visible")) {
         poster.removeAttribute("data-visible");
       }
     }
