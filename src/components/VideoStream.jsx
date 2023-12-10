@@ -32,17 +32,17 @@ function VideoStream() {
     }
   }, [ended]);
 
-  useEffect(() => {
-    if (paused && currentPlayerTime === 0) {
-      if (poster && !poster.hasAttribute("data-visible")) {
-        poster.setAttribute("data-visible", true);
-      }
-    } else {
-      if (poster && poster.hasAttribute("data-visible")) {
-        poster.removeAttribute("data-visible");
-      }
-    }
-  }, [paused]);
+  // useEffect(() => {
+  //   if (paused && currentPlayerTime === 0) {
+  //     if (poster && !poster.hasAttribute("data-visible")) {
+  //       poster.setAttribute("data-visible", true);
+  //     }
+  //   } else {
+  //     if (poster && poster.hasAttribute("data-visible")) {
+  //       poster.removeAttribute("data-visible");
+  //     }
+  //   }
+  // }, [paused]);
 
   return (
     <MediaPlayer
