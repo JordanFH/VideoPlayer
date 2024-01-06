@@ -17,8 +17,14 @@ function Example() {
 
   const ended = useMediaState("ended", player);
 
+  function onProviderChange(provider) {
+    if (provider && provider.type === "youtube") {
+      provider.cookies = true;
+    }
+  }
+
   useEffect(() => {
-    console.log(ended);
+    // console.log(ended);
     if (ended) {
       nextVideo();
     }
@@ -48,6 +54,7 @@ function Example() {
         playsinline
         aspectRatio="16/9"
         autoplay
+        onProviderChange={onProviderChange}
         // title="Mi video"
         // streamType="live"
         // onContextMenu={(e) => e.preventDefault()}
