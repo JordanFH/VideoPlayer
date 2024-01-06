@@ -47,6 +47,7 @@ function Example() {
         src={sources[src]}
         playsinline
         aspectRatio="16/9"
+        autoplay
         // title="Mi video"
         // streamType="live"
         // onContextMenu={(e) => e.preventDefault()}
