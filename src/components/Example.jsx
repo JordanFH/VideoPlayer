@@ -33,7 +33,8 @@ function Example() {
   const sources = [
     "youtube/dxytyRy-O1k",
     "youtube/BuQ82GNIpnA",
-    "youtube/2AilA-M6N5U",
+    "youtube/51iquRYKPbs",
+    "youtube/NGM6Ot-KxwQ",
   ];
 
   const [src, setSrc] = useState(0);
@@ -53,7 +54,7 @@ function Example() {
         src={sources[src]}
         playsinline
         aspectRatio="16/9"
-        autoplay
+        // autoplay
         onProviderChange={onProviderChange}
         // title="Mi video"
         // streamType="live"
